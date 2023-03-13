@@ -22,7 +22,6 @@ export default function Banner() {
 
     onSubmit: (values, action) =>{
       // console.log(values)
-    
       action.resetForm()
     }
    
@@ -31,7 +30,7 @@ export default function Banner() {
 
   //mailchimp
   function handleSubmit(values) {
-  const { firstName, email } = values;
+  const { name, email } = values;
   console.log(values)
 
   const apiKey = "42bb7227b34304961354d8eb89720d30-us10";
@@ -42,7 +41,7 @@ export default function Banner() {
       email_address: email,
       status: 'subscribed',
       merge_fields: {
-        FNAME: firstName,
+        FNAME: name,
       },
     },
     {
